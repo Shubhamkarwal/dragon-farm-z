@@ -1321,15 +1321,6 @@ function gameLoop(){
 }
 
 // ═══════════════════════════════════════════════════
-//  INIT
-// ═══════════════════════════════════════════════════
-initMap();
-generateMissions();
-updateUI();
-showMessage("🌾 WASD=Move · S=Seed/Cycle · 1-8=Quick Crop · T=Till · G=Water · H=Harvest · F=Nimbus · E=Talk · R=Trade · Space=Sleep");
-gameLoop();
-
-// ═══════════════════════════════════════════════════
 //  WEATHER SYSTEM — appended
 // ═══════════════════════════════════════════════════
 const WEATHERS=[
@@ -1530,5 +1521,13 @@ window.movePlayer = function() {
   }
 };
 
-// Init on load
+// ═══════════════════════════════════════════════════
+//  INIT — must run AFTER all definitions
+// ═══════════════════════════════════════════════════
+initMap();
+generateMissions();
+rollWeather();
+updateUI();
 initTouchControls();
+showMessage("🌾 WASD=Move · S=Seed · 1-8=Crop · T=Till · G=Water · H=Harvest · F=Nimbus · E=Talk · R=Trade · Space=Sleep");
+gameLoop();

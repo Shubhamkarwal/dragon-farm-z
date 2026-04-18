@@ -54,7 +54,7 @@ body{background:#000;overflow:hidden;font-family:'Press Start 2P',monospace;colo
 .inv-crop-slot span{font-size:6px;color:var(--gold);}
 
 /* DAILY MISSIONS */
-#mission-panel{pointer-events:all;position:absolute;top:58px;right:10px;width:192px;
+#mission-panel{pointer-events:all;position:absolute;top:58px;right:226px;width:192px;
   background:var(--panel);border:1px solid var(--gold);border-radius:10px;padding:10px;}
 #mission-title{font-size:7px;color:var(--gold);margin-bottom:8px;text-align:center;text-shadow:0 0 8px var(--gold);}
 #mission-list{display:flex;flex-direction:column;gap:5px;}
@@ -335,17 +335,33 @@ body{background:#000;overflow:hidden;font-family:'Press Start 2P',monospace;colo
 #settings-panel {
   pointer-events: all;
   position: fixed;
-  left: 10px;
-  bottom: 130px;
-  width: 200px;
-  background: rgba(6,6,20,0.94);
-  border: 1px solid rgba(255,215,0,0.4);
+  right: 10px;
+  top: 58px;
+  width: 210px;
+  background: rgba(6,6,20,0.96);
+  border: 2px solid rgba(255,215,0,0.6);
   border-radius: 12px;
   padding: 10px;
-  z-index: 30;
+  z-index: 200;
   display: flex;
   flex-direction: column;
   gap: 7px;
+  box-shadow: 0 0 20px rgba(255,215,0,0.2);
+}
+#settings-panel.collapsed #farmbot-section,
+#settings-panel.collapsed #settings-title { display: none; }
+#settings-toggle {
+  position: absolute;
+  top: -1px; right: -1px;
+  background: rgba(255,215,0,0.15);
+  border: 1px solid rgba(255,215,0,0.4);
+  border-radius: 0 10px 0 8px;
+  color: var(--gold);
+  font-size: 10px;
+  padding: 2px 7px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', monospace;
+  line-height: 1;
 }
 
 #settings-title {
